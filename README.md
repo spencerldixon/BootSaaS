@@ -1,12 +1,12 @@
-# Bootsaas
+# BootSaaS
 
 Bootstrap your start up! BootSaaS allows you to get on with creating your SaaS application without worrying about the setup.
 
 - Bootstrap
-- Font Awesome
 
 ### Coming Soon
 
+- Font Awesome
 - Devise
 - Stripe
 - Stripe Webhooks
@@ -15,7 +15,7 @@ Bootstrap your start up! BootSaaS allows you to get on with creating your SaaS a
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile (You may want to fix the version):
 
 ```ruby
 gem 'bootsaas'
@@ -35,7 +35,7 @@ Then run:
 rails g bootsaas:install
 ```
 
-BootSaaS will create a static pages controller for the front end of your app and a 'coming soon' page to direct signups to. It's all bootstrap so you can hop in and get tweaking straight away.
+BootSaaS will create a static pages controller for the front end of your app and a 'coming soon' page to direct signups to. It's all bootstrap so you can hop in and get tweaking straight away!
 
 To get the views, just run:
 
@@ -44,6 +44,10 @@ Then run:
 ```ruby
 rails g bootsaas:views
 ```
+
+## With thanks
+
+Thanks to http://startbootstrap.com for the sweet landing page template
 
 ## Contributing
 
