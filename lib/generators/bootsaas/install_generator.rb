@@ -5,7 +5,7 @@ module Bootsaas
 
 
     def copy_assets
-      assets "assets", "vendor/assets"
+      assets "assets", "app/assets"
     end
   end
 end
