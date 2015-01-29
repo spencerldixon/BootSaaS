@@ -13,9 +13,8 @@ module Bootsaas
     end
 
     def add_routes
-      insert_into_file 'config/routes.css', :after => "Rails.application.routes.draw do" do
-        'root static_pages#index'
-        'get \'static_pages/coming_soon\', to: \'static_pages#coming_soon\', as: \'coming_soon\''
+      insert_into_file 'config/routes.rb', :after => "Rails.application.routes.draw do" do
+        "\n  # BootSaaS routes for home page and coming soon landing page\n  root 'static_pages#index'\n  get 'coming_soon', to: 'static_pages#coming_soon', as: 'coming_soon'\n"
       end
     end
   end
