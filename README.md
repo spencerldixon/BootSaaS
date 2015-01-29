@@ -5,13 +5,9 @@ Bootstrap your start up! BootSaaS sets up your application and generates basic l
 ### What it does
 
 - Sets up Bootstrap
-- Sets up Font Awesome
 - Sets up a static pages controller, layouts, template views and partials for your front facing pages
 - Creates a simple home page and a coming soon page
-- Sets up a dashboard controller with simple layout 
 - Adds rails 12 factor gem for assets precompilation on heroku
-- Adds brakeman for vulnerability checking
-- Adds standard terms and conditions and privacy policy modals with lorem ipsum text
 - Sets up routes for your new pages
 - Adds tests!
 
