@@ -1,17 +1,19 @@
 # BootSaaS
 
-Bootstrap your start up! BootSaaS allows you to get on with creating your SaaS application without worrying about the setup.
+Bootstrap your start up! BootSaaS sets up your application and generates basic layouts to get your app started. Just create a blank rails app, add the gem and follow the installation instructions. Forget about the setup, concentrate on building the meat of your startup.
 
-- Bootstrap
+### What it does
 
-### Coming Soon
-
-- Font Awesome
-- Devise
-- Stripe
-- Stripe Webhooks
-- Mailers
-- Admin Panel
+- Sets up Bootstrap
+- Sets up Font Awesome
+- Sets up a static pages controller, layouts, template views and partials for your front facing pages
+- Creates a simple home page and a coming soon page
+- Sets up a dashboard controller with simple layout 
+- Adds rails 12 factor gem for assets precompilation on heroku
+- Adds brakeman for vulnerability checking
+- Adds standard terms and conditions and privacy policy modals with lorem ipsum text
+- Sets up routes for your new pages
+- Adds tests!
 
 ## Installation
 
@@ -21,7 +23,7 @@ Add this line to your application's Gemfile (You may want to fix the version):
 gem 'bootsaas'
 ```
 
-And then execute:
+And then run:
 
     $ bundle
 
@@ -35,15 +37,7 @@ Then run:
 rails g bootsaas:install
 ```
 
-BootSaaS will create a static pages controller for the front end of your app and a 'coming soon' page to direct signups to. It's all bootstrap so you can hop in and get tweaking straight away!
-
-To get the views, just run:
-
-Then run:
-
-```ruby
-rails g bootsaas:views
-```
+BootSaaS will create a static pages controller for the front end of your app and a 'coming soon' page to direct signups to. It's all bootstrap so you can hop in and get tweaking straight away! Drop in your google analytics, mailchimp form, and edit the sass for customisation.
 
 ## With thanks
 
