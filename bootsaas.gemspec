@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Bootsaas::VERSION
   spec.authors       = ["Spencer Dixon"]
   spec.email         = ["spencerlloyddixon@gmail.com"]
-  spec.summary       = %q{TODO: Bootstrap your start up.}
-  spec.description   = %q{TODO: Creates a template app installing bootstrap, stripe and a whole load of other things.}
+  spec.summary       = "BootSaaS sets up your application and generates basic layouts to get your app started"
+  spec.description   = "BootSaaS sets up your application and generates basic layouts to get your app started"
   spec.homepage      = "https://github.com/spencerldixon/BootSaaS"
   spec.license       = "MIT"
 
