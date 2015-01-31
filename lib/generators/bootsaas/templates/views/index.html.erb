@@ -5,11 +5,12 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="intro-message">
-          <h1>BootSaaS</h1>
+          <h1>A catchy strapline here</h1>
+          <h3>Explain what your product does and<br> how it benefits your users here</h3>
           <h3>Try it now, it's free!</h3>
           <hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
-            <li><%= link_to 'Sign Up', coming_soon_path, class: "btn btn-default btn-lg" %></li>
+            <li><%= link_to 'Sign Up', pricing_path, class: "btn btn-success btn-lg" %></li>
           </ul>
         </div>
       </div>
@@ -20,15 +21,15 @@
 <!-- /.intro-header -->
 
 <!-- Page Content -->
-<a  name="services"></a>
+<a  name="howitworks"></a>
 <div class="content-section-a">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-        <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+        <h2 class="section-heading">Attractive features described below</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel eros nec ipsum viverra lacinia. In ante nibh, faucibus ut mollis eget, maximus in ex. </p><p class="lead">Morbi vitae mauris vehicula, sollicitudin arcu non, ornare nulla. In maximus pretium metus non dapibus. Proin vestibulum lacus at euismod sagittis. </p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <%= image_tag 'ipad.png', class: 'img-responsive' %>
@@ -45,8 +46,8 @@
       <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-        <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+        <h2 class="section-heading">More features</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel eros nec ipsum viverra lacinia. In ante nibh, faucibus ut mollis eget, maximus in ex. </p><p class="lead">Morbi vitae mauris vehicula, sollicitudin arcu non, ornare nulla. In maximus pretium metus non dapibus. Proin vestibulum lacus at euismod sagittis. </p>
       </div>
       <div class="col-lg-5 col-sm-pull-6  col-sm-6">
         <%= image_tag 'dog.png', class: 'img-responsive' %>
@@ -63,8 +64,8 @@
       <div class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-        <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+        <h2 class="section-heading">Even more features</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel eros nec ipsum viverra lacinia. In ante nibh, faucibus ut mollis eget, maximus in ex. </p><p class="lead">Morbi vitae mauris vehicula, sollicitudin arcu non, ornare nulla. In maximus pretium metus non dapibus. Proin vestibulum lacus at euismod sagittis. </p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <%= image_tag 'phones.png', class: 'img-responsive' %>
@@ -80,13 +81,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
-          <h2>Connect to Start Bootstrap:</h2>
+          <h2>Stay in the know</h2>
+          <h4>We don't spam or share your email, just great updates and news about the cool things we're working on for you</h4>
       </div>
       <div class="col-lg-6">
         <ul class="list-inline banner-social-buttons">
-            <li><a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a></li>
-            <li><a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a></li>
-            <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a></li>
+            <%= render 'layouts/mailchimp' %>
         </ul>
       </div>
     </div>

@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
 
   def coming_soon
   end
+
+  def pricing
+  end
 end

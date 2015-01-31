@@ -11,4 +11,8 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get pricing" do
+    get :pricing
+    assert_response :success
+  end
 end

@@ -36,6 +36,8 @@ h6 {
     color: #f8f8f8;
     background: image-url('intro-bg.jpg') no-repeat center center;
     background-size: cover;
+
+    .panel { color: #333; }
 }
 
 .intro-message {
@@ -44,7 +46,13 @@ h6 {
     padding-bottom: 20%;
 }
 
-.intro-message > h1 {
+.pricing-message {
+    position: relative;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.intro-message > h1, .pricing-message > h1 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 5em;
