@@ -1,0 +1,75 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Update my Account Information</h3>
+  </div>
+  <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.label :email, class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9">
+          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        </div>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :password, class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9">
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          <p class="help-block">Leave this blank if you don't want to change it</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :current_password, class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9">
+          <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+          <p class="help-block">We need your current password to confirm your changes</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.submit "Update", class: 'btn btn-info' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Cancel my Account</h3>
+  </div>
+  <div class="panel-body">
+    <p>Unhappy with something or just no need to use your account anymore? You can cancel your account by clicking the button below. If there is anything we can do to help improve our service or you just want to let us know how got on, please drop us an email before deleting your account. We'd love to hear from you.</p>
+    <p>Please note! Deleting your account is <strong>PERMANENT</strong>. This will delete all your data stored with us and we will not be able to recover this for you if you come back.</p>
+          
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="col-lg-6">
+          <%= button_to "Leave this Page", root_path, method: :get, class: "btn btn-info" %>
+        </div>
+        <div class="col-lg-6">
+          <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure? This will delete all your data permanently and we won't be able to recover it if you come back." }, method: :delete, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

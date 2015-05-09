@@ -1,5 +1,13 @@
 # BootSaaS Changelog
 
+## 1.1.0
+
+- Introduces a devise generator for bootstrapping devise views
+- Adds a devise registration controller for customising devise behaviour
+
+(Except the edit account view, as this should be integrated within your applications layout)
+(Please note you will have to add back in and custom fields you use here)
+
 ## 1.0.1
 
 - Edits to pricing panel styling to avoid clashes with default bootstrap behaviour

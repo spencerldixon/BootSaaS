@@ -1,7 +1,7 @@
 require 'rails/generators'
 module Bootsaas
   class InstallGenerator < Rails::Generators::Base
-    source_root File.expand_path("../templates", __FILE__)
+    source_root File.expand_path("../install_templates", __FILE__)
 
     def copy_assets
       directory "assets", "app/assets"
@@ -10,6 +10,7 @@ module Bootsaas
       directory "test", "test"
       directory "layouts", "app/views/layouts"
       directory "views", "app/views/static_pages"
+      directory "vendor", "vendor"
     end
 
     def add_routes
@@ -18,25 +19,41 @@ module Bootsaas
       end
     end
 
+    def append_to_manifest
+      insert_into_file 'app/assets/javascripts/application.js', :after => "//= require jquery_ujs" do
+        "\n//= require bootstrap\n"
+      end
+
+      insert_into_file 'app/assets/stylesheets/application.css', :before => "*= require_tree ." do
+        "\n*= require bootstrap\n"
+      end
+
+      insert_into_file 'app/assets/stylesheets/application.css', :after => " */" do
+        "\n\n@import 'font-awesome';"
+      end
+
+      copy_file "app/assets/stylesheets/application.css", "app/assets/stylesheets/application.scss"
+      remove_file 'app/assets/stylesheets/application.css'
+    end
+
     def add_gems
       append_to_file 'Gemfile' do
-        "\ngem 'rails_12factor', group: :production\ngem 'brakeman'"
+        "\ngem 'rails_12factor', group: :production\ngem 'brakeman'\ngem 'font-awesome-rails'"
       end
     end
 
     def add_padding_for_navbar
-      append_to_file 'app/assets/stylesheets/application.css' do
-        "body { padding-top: 30px; }"
+      append_to_file 'app/assets/stylesheets/application.scss' do
+        "\n\nbody {\n
+        \tmargin: 0;\n
+        \tpadding: 0;\n
+        \tpadding-top: 50px;\n
+        }\n\n
+        
+        .container-dashboard {\n
+          \tpadding-top: 20px;\n
+        }"
       end
     end
-
-    # Removed for now, will be in next release
-    
-    # def add_defaults_to_environments
-    #   prepend_to_file 'config/secrets.yml', "# Any secrets here will be inhereted by all environments\n# Declaring it again in an environment will override it's default value\ndefault: &default\n\n"
-    #   inject_into_file "config/secrets.yml", "\n\t<<: *default", :after => /development:/
-    #   inject_into_file "config/secrets.yml", "\n\t<<: *default", :after => /test:/
-    #   inject_into_file "config/secrets.yml", "\n\t<<: *default", :after => /production:/
-    # end
   end
 end
