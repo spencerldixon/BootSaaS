@@ -7,7 +7,6 @@ module Bootsaas
       gem 'bootstrap-sass'
       gem 'font-awesome-rails'
       gem 'annotate'
-      gem 'stripe'
 
       # Add these gems to production environment only
       gem_group :production do
@@ -26,8 +25,19 @@ module Bootsaas
     end
 
     def create_static_pages
-      system("rails g controller StaticPages index")
-      route "root 'static_pages#index'"
+      if yes? "Do you want to create a static pages controller for the home page?"
+        system "rails g controller StaticPages index"
+        gsub_file 'config/routes.rb', "get 'static_pages/index'", ''
+        route "root 'static_pages#index'"
+      end
+    end
+
+    def create_dashboard
+      if yes? "Do you want to create a dashboard controller?"
+        system "rails g controller Dashboard index"
+        gsub_file 'config/routes.rb', "get 'dashboard/index'", ''
+        route "get '/dashboard', to: 'dashboard#index', as: 'dashboard'"
+      end
     end
 
     #def add_padding_for_navbar
