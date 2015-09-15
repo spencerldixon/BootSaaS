@@ -57,6 +57,10 @@ module Bootsaas
 
     def devise_layouts
       if yes? "Would you like to install devise layouts?"
+        # install devise layouts folder
+        # add conditional routes to application.rb
+        # create devise controller
+        # add devise controller in routes.rb
       end
     end
   end
