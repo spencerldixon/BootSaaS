@@ -15,6 +15,8 @@ module Bootsaas
     def copy_dashboard_files
       copy_file "_all-skins.scss", "vendor/assets/stylesheets/_all-skins.scss"
       copy_file "AdminLTE.css", "vendor/assets/stylesheets/AdminLTE.css"
+      copy_file "bootsaas_colors.scss", "vendor/assets/stylesheets/bootsaas_colors.scss"
+      copy_file "bootsaas_dash.scss", "vendor/assets/stylesheets/bootsaas_dash.scss"
       copy_file "adminlte.js", "vendor/assets/javascripts/adminlte.js"
       copy_file "dashboard.html.erb", "app/views/layouts/dashboard.html.erb"
     end
