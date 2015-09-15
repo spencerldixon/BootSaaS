@@ -8,16 +8,21 @@ module Bootsaas
       copy_file "classie.js", "vendor/assets/javascripts/classie.js"
       copy_file "creative.js", "vendor/assets/javascripts/creative.js"
       copy_file "wow.min.js", "vendor/assets/javascripts/wow.min.js"
-      copy_file "animate.min.css", "vendor/assets/stylesheets/animate.min.css"
-      copy_file "creative.css", "vendor/assets/stylesheets/creative.css"
+      copy_file "creative.scss", "vendor/assets/stylesheets/creative.scss"
       copy_file "home.html.erb", "app/views/layouts/home.html.erb"
     end
 
     def copy_dashboard_files
-      copy_file "_all-skins.css", "vendor/assets/stylesheets/_all-skins.css"
+      copy_file "_all-skins.scss", "vendor/assets/stylesheets/_all-skins.scss"
       copy_file "AdminLTE.css", "vendor/assets/stylesheets/AdminLTE.css"
       copy_file "adminlte.js", "vendor/assets/javascripts/adminlte.js"
       copy_file "dashboard.html.erb", "app/views/layouts/dashboard.html.erb"
+    end
+
+    def copy_devise_layout
+      if yes? "Would you like to install the devise layout to use with devise?"
+        copy_file "devise.html.erb", "app/views/layouts/dashboard/html.erb"
+      end
     end
 
     def append_dashboard_to_manifest
@@ -30,7 +35,6 @@ module Bootsaas
       append_to_file 'app/assets/javascripts/application.js', "\n//= require classie"
       append_to_file 'app/assets/javascripts/application.js', "\n//= require creative"
       append_to_file 'app/assets/javascripts/application.js', "\n//= require wow.min"
-      append_to_file 'app/assets/stylesheets/application.css.scss', "\n@import 'animate.min';"
       append_to_file 'app/assets/stylesheets/application.css.scss', "\n@import 'creative';"
     end
 
@@ -38,6 +42,7 @@ module Bootsaas
       name = ask "What should your application be titled?"
       gsub_file "app/views/layouts/dashboard.html.erb", "BootSaaS", "#{name}"
       gsub_file "app/views/layouts/home.html.erb", "BootSaaS", "#{name}"
+      gsub_file "app/views/layouts/devise.html.erb", "BootSaaS", "#{name}"
     end
 
     def secure_dashboard_controller
@@ -57,6 +62,7 @@ module Bootsaas
 
     def devise_layouts
       if yes? "Would you like to install devise layouts?"
+        puts "Do it yourself."
         # install devise layouts folder
         # add conditional routes to application.rb
         # create devise controller
