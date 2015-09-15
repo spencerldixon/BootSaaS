@@ -21,7 +21,7 @@ module Bootsaas
 
     def copy_devise_layout
       if yes? "Would you like to install the devise layout to use with devise?"
-        copy_file "devise.html.erb", "app/views/layouts/dashboard/html.erb"
+        copy_file "devise.html.erb", "app/views/layouts/devise.html.erb"
       end
     end
 
