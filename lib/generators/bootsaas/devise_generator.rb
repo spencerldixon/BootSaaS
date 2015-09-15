@@ -50,14 +50,14 @@ module Bootsaas
 
     def layout_config
       insert_into_file 'config/application.rb', :after => "config.active_record.raise_in_transactional_callbacks = true" do
-        "\n\nconfig.to_prepare do\n
-          \tdevise::sessionscontroller.layout 'devise'\n
-          \tdevise::confirmationscontroller.layout 'devise'\n
-          \tdevise::unlockscontroller.layout 'devise'\n
-          \tdevise::passwordscontroller.layout 'devise'\n
-          \tdevise::registrationscontroller.layout proc{ |controller| user_signed_in? ? 'dashboard' : 'devise' }\n
-          \tdevise::mailer.layout 'mailer'\n
-        end"
+        "\n\n\tconfig.to_prepare do
+          \tDevise::SessionsController.layout 'devise'
+          \tDevise::ConfirmationsController.layout 'devise'
+          \tDevise::UnlocksController.layout 'devise'
+          \tDevise::PasswordsController.layout 'devise'
+          \tDevise::RegistrationsController.layout proc{ |controller| user_signed_in? ? 'dashboard' : 'devise' }
+          \tDevise::Mailer.layout 'mailer'
+        \tend"
       end
     end
   end
