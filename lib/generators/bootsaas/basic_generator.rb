@@ -40,6 +40,16 @@ module Bootsaas
       end
     end
 
+    def add_gravatar_helper
+      insert_into_file "app/helpers/application_helper.rb", after: "module ApplicationHelper" do
+        "\n\tdef gravatar_for user, options={size: 50}\n\t\t
+          gravatar_id = Digest::MD5::hexdigest(user.email.downcase)\n\t\t
+          size = options[:size]\n\t\t
+          gravatar_url = 'https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}'\n\t\t
+         image_tag(gravatar_url, alt: user.email, class: 'gravatar img-circle')\n\t
+        end\n"
+    end
+
     #def add_padding_for_navbar
       #append_to_file 'app/assets/stylesheets/application.scss' do
         #"\n\nbody {\n

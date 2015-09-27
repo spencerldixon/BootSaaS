@@ -2,11 +2,6 @@
 
 Bootstrap your start up! BootSaaS sets up your application and generates basic layouts to get your app started. Just create a blank rails app, add the gem and follow the installation instructions. Forget about the setup, concentrate on building the meat of your startup.
 
-![Home Page](http://i.imgur.com/1PXcvms.png)
-![Bottom of Homepage, Mailchimp form](http://i.imgur.com/xxmPiCZ.png)
-![Pricing Table](http://i.imgur.com/RxpwEfm.png)
-![Coming Soon Page](http://i.imgur.com/3ViE3bm.png)
-
 ### What it does
 
 - Sets up Bootstrap
@@ -48,6 +43,7 @@ Then run:
 ```ruby
 rails g bootsaas:install
 ```
+Remove the gem once complete
 
 To get the templates for devise, create your User model to use with devise, add the gem, and install devise as normal. Run your migrations as normal and generate the devise views. Then run the following installer to replace devises views with those of BootSaaS:
 
@@ -58,6 +54,12 @@ rails g bootsaas:devise
 BootSaaS will create a static pages controller for the front end of your app, a 'pricing' page to direct signups to and a 'coming soon' page so that you can measure the commitment of a user trying to sign up via the Pricing page. It's all bootstrap so you can hop in and get tweaking straight away! Drop in your google analytics, mailchimp form, and edit the css for customisation.
 
 BootSaaS takes the policy of not hiding it's files in the gem. Instead, it copies these files to your project so you can run the generators, remove the gem, and tweak away to kickstart your project.
+
+## Methods
+
+```gravatar_for @user, size: 50```
+
+- Returns the gravatar image for that user, just pass a user object that has an email property and an optional size parameter
 
 ## With thanks
 
