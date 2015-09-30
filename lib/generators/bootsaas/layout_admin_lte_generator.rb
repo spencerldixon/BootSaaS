@@ -29,7 +29,7 @@ module Bootsaas
 
     def append_dashboard_to_manifest
       append_to_file 'app/assets/javascripts/application.js', "\n//= require adminlte"
-      append_to_file 'app/assets/stylesheets/application.css.scss', "\n@import 'AdminLTE';\n@import '_all-skins';"
+      append_to_file 'app/assets/stylesheets/application.css.scss', "\n@import 'bootsaas_colors';\n@import 'bootsaas_dash';\n@import 'AdminLTE';\n@import '_all-skins';"
     end
 
     def append_home_to_manifest
