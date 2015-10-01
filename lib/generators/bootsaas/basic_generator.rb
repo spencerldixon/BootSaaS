@@ -48,6 +48,7 @@ module Bootsaas
           gravatar_url = 'https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}'\n\t\t
          image_tag(gravatar_url, alt: user.email, class: 'gravatar img-circle')\n\t
         end\n"
+      end
     end
 
     #def add_padding_for_navbar
